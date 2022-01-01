@@ -2,6 +2,7 @@ import Head from 'next/head'
 import { useRouter } from 'next/router'
 export default function Home() {
   const router = useRouter();
+  
   return (
     <div className="bg-base-200">
       <div className="flex h-screen items-center justify center container">
