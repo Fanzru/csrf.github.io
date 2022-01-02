@@ -16,7 +16,7 @@ jobs:
         uses: actions/cache@v2
         with:
           path: "**/node_modules"
-          key: ${{ runner.os }}-modules-${{ hashFiles('**/package.json') }}
+          key: ${{ runner.os }}-modules-${{ hashFiles('**/package-lock.json') }}
 
       - name: Install 🔧
         run: npm install
@@ -24,7 +24,7 @@ jobs:
       - name: Build 🔧
         run: |
           npm export
-          touch out/.nojekyll
+          touch ./out/.nojekyll
         env:
           GITHUB_TOKEN: ${{ secrets.TOKEN_SECRET }}
 
